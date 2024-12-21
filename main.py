@@ -1,14 +1,21 @@
-slovo = input("Введите слово: ")
-dlina = len(slovo)  # Длина слова
-print("Длина слова:", dlina)
+stroka = input("Введите строку: ")
+dlina = len(stroka)  
+print("Длина строки:", dlina)
 
 glasn = "аоуаыэиёюяе"
 razdel = "ьъ"
+soglasn = "бвгджзйклмнпрстфхцчшщ"
 
-for i in slovo:  # Проходим по каждому символу в слове
+count_glasnye = 0
+count_soglasnye = 0
+
+for i in stroka.lower():  
     if i in glasn:
-        print(i, "- гласная")
+        count_glasnye += 1  
     elif i in razdel:
-        print(i, "- разделительный")
-    else:
-        print(i, "- согласный")
+        continue  
+    elif i in soglasn:
+        count_soglasnye += 1 
+
+print("Количество гласных:", count_glasnye)
+print("Количество согласных:", count_soglasnye)
